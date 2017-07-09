@@ -14,13 +14,13 @@ export class MessageService {
         this.messages.push(message);
         const body = JSON.stringify(message);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('http://angular2-nodejs-test.herokuapp.com/message', body, {headers:headers}) //return Observable
+        return this.http.post('https://angular2-nodejs-test.herokuapp.com/message', body, {headers:headers}) //return Observable
                         .map((response: Response) => response.json()) //map function automatically throw Observable
                         .catch((error:Response) => Observable.throw(error.json()));
     }
 
     getMessages() {
-        return this.http.get('http://angular2-nodejs-test.herokuapp.com/message')
+        return this.http.get('https://angular2-nodejs-test.herokuapp.com/message')
             .map((response: Response) => {
                 const messages = response.json().obj;
                 let transformedMessages: Message[] = [];
