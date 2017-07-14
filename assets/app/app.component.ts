@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { MessageService } from "./messages/message.service";
+import { CategoryService } from './category/category.service';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html',
-    providers: [MessageService];
+    providers: [CategoryService]
 })
-export class AppComponent {
 
+export class AppComponent {
+    // message = {
+    //     content: 'A message',
+    //     author: 'Max'
+    // }
 }
