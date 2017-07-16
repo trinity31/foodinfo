@@ -1,7 +1,3 @@
-<div class="page-header">
-  <h1>Category</h1>
-</div>
 <div class="list-group">
-  <!--<a *ngFor="let category of categories" href="#" class="list-group-item">{{category.code_name}}</a>-->
-  <a href="#" class="list-group-item">Dapibus ac facilisis in<span class="badge">14</span></a>
+  <a *ngFor="let category of categories" routerLink="/category/{{category.code}}01/1" (click)="onCategoryClicked(category.code_name)" class="list-group-item">{{category.code_name}}<span class="badge">{{category.count}}</span></a>
 </div>

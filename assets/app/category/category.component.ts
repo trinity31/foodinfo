@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from './category.model';
+import { Component, OnInit, Output } from '@angular/core';
+import { Category, FoodType } from '../shared/category.model';
 import { CategoryService } from './category.service';
 
 @Component({
@@ -8,21 +8,22 @@ import { CategoryService } from './category.service';
 })
 
 export class CategoryComponent {
-    categories: Category[];
-    // categories:Category[] = [
-    //     new Category("001", "Category 1", 15),
-    //     new Category("002", "Category 2", 3),
-    //     new Category("003", "Category 3", 24)
-    // ]
+    categories: FoodType[];
 
     constructor(private categoryService: CategoryService) {}
 
     ngOnInit() {
                 this.categoryService.getCategories()
-            .subscribe(
-                (categories: Category[]) => {
-                    this.categories = categories;
-                }
-            );
+                .subscribe(
+                    (categories: Category) => {
+                        console.log(categories)
+                        this.categories = categories.food_list;
+                    }
+                );
+    }
+
+    onCategoryClicked(category_name: string) {
+        this.categoryService.setCurrentCategory(category_name);
+        this.categoryService.setCurrentPage(1);
     }
 }

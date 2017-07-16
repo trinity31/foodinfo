@@ -1,4 +1,4 @@
-class FoodType {
+export class FoodType {
     code: string;
     code_name: string;
     count: number;
