@@ -19,5 +19,7 @@ export class SearchService {
 
     search(value: string) {
         console.log("Searching for " + value);
+
+        
     }
 }
