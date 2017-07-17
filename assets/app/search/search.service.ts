@@ -17,9 +17,11 @@ export class SearchService {
     //          .catch(err => Observable.throw(err));
     // }
 
-    search(value: string) {
-        console.log("Searching for " + value);
-
-        
+    search(params: Observable<Params>): Observable<Food> {
+       // console.log("Searching for " + value);
+        const url = '/foodinfo/search';
+        return params.flatMap(v => this.http.get(`${url}/${v.code}/${v.page}`))
+             .map(r => r.json())
+             .catch(err => Observable.throw(err));        
     }
 }

@@ -4,8 +4,8 @@
             <label for="content">검색어를 입력하세요</label>
             <input 
                 type="text" id="content" 
-                class="form-control" ngModel name="content" required>
+                class="form-control" ngModel name="content" #input required>
         </div>
-        <button class="btn btn-primary" type="submit">Find</button>
+        <button class="btn btn-primary" type="submit" routerLink="/search/input.value/1">Find</button>
     </form>
 </div>

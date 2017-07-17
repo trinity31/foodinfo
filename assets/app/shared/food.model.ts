@@ -15,6 +15,5 @@ export class Product {
 
 export class Food {
     constructor(public food_list:Array<Product>) {
-        
     }
 }

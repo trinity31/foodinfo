@@ -3,6 +3,8 @@ const request = require('request');
 var router = express.Router();
 const categoryUrl = 'http://api.dbstore.or.kr:8880/foodinfo/category.do';
 const foodUrl = 'http://api.dbstore.or.kr:8880/foodinfo/list.do';
+const foodDetailUrl = 'http://api.dbstore.or.kr:8880/foodinfo/food_detail.do';
+const searchUrl = 'http://api.dbstore.or.kr:8880/foodinfo/search.do';
 
 router.get('/', function (req, res, next) {
     res.render('index');
@@ -42,6 +44,51 @@ router.get('/foodinfo/category/:code/:page', (req, res, next) => {
        //res.json(JSON.parse(body));
        res.send(body);
    });
+})
+
+router.get('/foodinfo/food_detail/:c/:s', (req, res, next) => {
+    //n=10&p=1&c=F3J05&s=food_name&o=u
+    const codeParam =  req.param('c');
+    const seqParam = req.param('s');
+
+    console.log(codeParam, seqParam);
+
+    request({
+       url: foodDetailUrl,
+       headers: {
+           'x-waple-authorization' :  'NDAzLTE0OTkxNzMzNjEwMjItMWI3OGU4Y2MtNmJmZC00NWFjLWI4ZTgtY2M2YmZkODVhYzkz'
+       },
+       qs: {
+           uid : 'LS7CVJG3',
+           c : codeParam,
+           s: seqParam
+       }
+   }, (error, response, body) => {
+       //res.json(JSON.parse(body));
+       res.send(body);
+   });
+})
+
+router.get('/foodinfo/search/:code/:page', (req, res, next) => {
+    const codeParam =  req.param('code');
+    const page = req.param('page');
+    request({
+       url: searchUrl,
+       headers: {
+           'x-waple-authorization' :  'NDAzLTE0OTkxNzMzNjEwMjItMWI3OGU4Y2MtNmJmZC00NWFjLWI4ZTgtY2M2YmZkODVhYzkz'
+       },
+       qs: {
+           uid : 'LS7CVJG3',
+           w: codeParam, 
+           n : 100,
+           p: page,
+           s: 'food_name',
+           o : 'u'
+       }
+    }, (error, response, body) => {
+       //res.json(JSON.parse(body));
+       res.send(body);
+    });
 })
 
 module.exports = router;
