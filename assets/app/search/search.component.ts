@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { SearchService } from "./search.service";
 import { Product, Food } from "../shared/food.model";
 import { ActivatedRoute } from "@angular/router";
+import { FoodService } from "../food/food.service";
 
 @Component({
     selector: 'app-search',
@@ -11,25 +12,16 @@ import { ActivatedRoute } from "@angular/router";
 
 export class SearchComponent {
     foods: Product[];
+
     constructor(public route: ActivatedRoute,
+        private foodService: FoodService,
         private searchService: SearchService) {
-        
     }
     
-    //console.log("Current Page: " + this.categoryService.getCurrentPage());
-    //this.current_page = this.categoryService.getCurrentPage();
-
-    onSubmit(form:NgForm) {
-        // const message = new Message(form.value.content, 'Max');
-        //   this.messageService.addMessage(message)
-        //         .subscribe(
-            //             data => console.log(data),
-            //             error => console.error(error),
-            
-            //         );
+    onSubmit(form: NgForm) {
             console.log("Submit pressed! " + form.value.content);
             //this.searchService.search(form.value.content);
-            this.searchService.search(this.route.params)
+            this.searchService.search(form.value.content)
             .subscribe(
                 (foods: Food) => {
                     console.log(foods);
@@ -37,5 +29,9 @@ export class SearchComponent {
                 } 
             )            
             form.resetForm();
-        }
     }
+
+    setCurrentFood(food: Product) {
+        this.foodService.setCurrentFood(food.food_name, food.code);
+    }
+}

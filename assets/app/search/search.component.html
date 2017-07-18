@@ -6,6 +6,21 @@
                 type="text" id="content" 
                 class="form-control" ngModel name="content" #input required>
         </div>
-        <button class="btn btn-primary" type="submit" routerLink="/search/input.value/1">Find</button>
+        <button class="btn btn-primary" type="submit">Find</button>
     </form>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media" *ngFor="let food of foods" routerLink="/food-detail/{{food.code}}/{{food.seq_code}}" (click)="setCurrentFood(food)" class="list-group-item">
+                <div class="media-left">
+                    <img class="media-object" src="{{food.thumb_img}}" width="160px" height="160px" alt="Image">
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{food.food_name}}</h4>
+                    제조사: {{food.sell_com}} <br>
+                    용량: {{food.volume}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

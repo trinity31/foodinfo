@@ -8,12 +8,14 @@ import { router } from './app.routing';
 import { HeaderComponent } from "./header.component";
 import { SearchComponent } from "./search/search.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FoodDetailComponent } from "./food-detail/food-detail.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         CategoryComponent,
         FoodComponent,
+        FoodDetailComponent,
         SearchComponent,
         HeaderComponent
     ],

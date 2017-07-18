@@ -46,7 +46,7 @@ router.get('/foodinfo/category/:code/:page', (req, res, next) => {
    });
 })
 
-router.get('/foodinfo/food_detail/:c/:s', (req, res, next) => {
+router.get('/foodinfo/food-detail/:c/:s', (req, res, next) => {
     //n=10&p=1&c=F3J05&s=food_name&o=u
     const codeParam =  req.param('c');
     const seqParam = req.param('s');
@@ -69,9 +69,8 @@ router.get('/foodinfo/food_detail/:c/:s', (req, res, next) => {
    });
 })
 
-router.get('/foodinfo/search/:code/:page', (req, res, next) => {
-    const codeParam =  req.param('code');
-    const page = req.param('page');
+router.get('/foodinfo/search/:value', (req, res, next) => {
+    const value = req.param('value');
     request({
        url: searchUrl,
        headers: {
@@ -79,9 +78,9 @@ router.get('/foodinfo/search/:code/:page', (req, res, next) => {
        },
        qs: {
            uid : 'LS7CVJG3',
-           w: codeParam, 
+           w: value, 
            n : 100,
-           p: page,
+           p: 1,
            s: 'food_name',
            o : 'u'
        }

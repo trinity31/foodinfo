@@ -14,17 +14,6 @@ export class FoodComponent {
     foods: Product[];
     category_name: string;
     current_page: number;
-
-   // route: ActivatedRoute;
-
-    // constructor(route: ActivatedRoute, http: Http) {
-    //     const url = '/foodinfo/category';
-    //     route.params.flatMap(v => http.get(`${url}/${v.code}`))
-    //         .map(r => r.json())
-    //         .subscribe(v => {
-    //             this.foodList = v;
-    //         })
-    // }
     
     constructor(public route: ActivatedRoute, 
         private foodService: FoodService,
@@ -33,7 +22,7 @@ export class FoodComponent {
     ngOnInit() {
         console.log("Current Page: " + this.categoryService.getCurrentPage());
         this.current_page = this.categoryService.getCurrentPage();
-        
+
         this.foodService.getFoods(this.route.params)
             .subscribe(
                 (foods: Food) => {
@@ -43,7 +32,11 @@ export class FoodComponent {
             )
     }
 
-    getCurrentCategory(): string {
+    getCurrentCategory(name: string) {
         return this.categoryService.getCurrentCategory();
+    }
+
+    setCurrentFood(food: Product) {
+        this.foodService.setCurrentFood(food.food_name, food.code);
     }
 }

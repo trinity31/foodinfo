@@ -2,6 +2,7 @@ import { CategoryComponent } from "./category/category.component";
 import { FoodComponent } from './food/food.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from "./search/search.component";
+import { FoodDetailComponent } from "./food-detail/food-detail.component";
 
 const appRoutes: Routes = [
     {
@@ -11,11 +12,14 @@ const appRoutes: Routes = [
         path: 'category/:code/:page', component: FoodComponent
     },
     {
-        path: 'food_detail/:c/:s', component: FoodDetailComponent
+        path: 'food-detail/:c/:s', component: FoodDetailComponent
     },
     {
-        path: 'search/:code/:page', component: SearchComponent
-    },    
+        path: 'search', component: SearchComponent
+    },     
+    // {
+    //     path: 'search/:code/:page', component: SearchResultComponent
+    // },    
     {
         path: '', redirectTo: '/category', pathMatch: 'full'
     }

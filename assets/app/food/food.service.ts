@@ -7,17 +7,8 @@ import { Params } from "@angular/router"
 
 @Injectable()
 export class FoodService {
-    //private categories: Category[] = []; //create empty array
-    ////route: ActivatedRoute;
-
-    // constructor(route: ActivatedRoute, http: Http) {
-    //     const url = '/foodinfo/category';
-    //     route.params.flatMap(v => http.get(`${url}/${v.code}`))
-    //         .map(r => r.json())
-    //         .subscribe(v => {
-    //             this.foodList = v;
-    //         })
-    // }
+    current_name: string;
+    current_code: string;
 
     constructor(private http:Http) {}
 
@@ -26,5 +17,18 @@ export class FoodService {
         return params.flatMap(v => this.http.get(`${url}/${v.code}/${v.page}`))
              .map(r => r.json())
              .catch(err => Observable.throw(err));
+    }
+
+    setCurrentFood(name: string, code: string) {
+        this.current_name = name;
+        this.current_code = code;
+    }
+
+    getCurrentFoodName(): string {
+        return this.current_name;
+    }
+
+    getCurrentFoodCode(): string {
+        return this.current_code;
     }
 }
