@@ -22,7 +22,7 @@ function View_CategoryComponent_1(_l) {
                 ad = (pd_0 && ad);
             }
             if (('click' === en)) {
-                var pd_1 = (_co.onCategoryClicked(_v.context.$implicit.code_name) !== false);
+                var pd_1 = (_co.onCategoryClicked(_v.context.$implicit) !== false);
                 ad = (pd_1 && ad);
             }
             return ad;

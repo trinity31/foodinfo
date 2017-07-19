@@ -8,6 +8,7 @@ import { Category } from '../shared/category.model';
 export class CategoryService {
     //private categories: Category[] = []; //create empty array
     current_category: string;
+    current_code: string;
     current_page: number;
 
     constructor(private http:Http) {}
@@ -41,5 +42,13 @@ export class CategoryService {
 
     getCurrentPage(): number {
         return this.current_page;
+    }
+
+    setCurrentFoodCode(code: string) {
+        this.current_code = code;
+    }
+
+    getCurrentFoodCode(): string {
+        return this.current_code;
     }
 }

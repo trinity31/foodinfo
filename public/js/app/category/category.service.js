@@ -41,6 +41,12 @@ var CategoryService = (function () {
     CategoryService.prototype.getCurrentPage = function () {
         return this.current_page;
     };
+    CategoryService.prototype.setCurrentFoodCode = function (code) {
+        this.current_code = code;
+    };
+    CategoryService.prototype.getCurrentFoodCode = function () {
+        return this.current_code;
+    };
     CategoryService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [Http])

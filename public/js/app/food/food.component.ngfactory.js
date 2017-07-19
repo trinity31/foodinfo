@@ -10,6 +10,7 @@ import * as i2 from '@angular/common';
 import * as i3 from './food.component';
 import * as i4 from './food.service';
 import * as i5 from '../category/category.service';
+import * as i6 from '@angular/platform-browser';
 var styles_FoodComponent = [];
 export var RenderType_FoodComponent = i0.ɵcrt({ encapsulation: 2,
     styles: styles_FoodComponent, data: {} });
@@ -65,23 +66,123 @@ export function View_FoodComponent_0(_l) {
         (_l()(), i0.ɵted(null, ['\n        '])), (_l()(), i0.ɵand(16777216, null, null, 1, null, View_FoodComponent_1)), i0.ɵdid(802816, null, 0, i2.NgForOf, [i0.ViewContainerRef, i0.TemplateRef, i0.IterableDiffers], { ngForOf: [0,
                 'ngForOf'] }, null), (_l()(), i0.ɵted(null, ['\n    '])),
         (_l()(), i0.ɵted(null, ['\n'])), (_l()(), i0.ɵted(null, ['\n\n'])),
-        (_l()(), i0.ɵeld(0, null, null, 42, 'nav', [['aria-label', 'Page navigation']], null, null, null, null, null)),
-        (_l()(), i0.ɵted(null, ['\n  '])), (_l()(), i0.ɵeld(0, null, null, 39, 'ul', [['class', 'pagination']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['\n    '])),
-        (_l()(), i0.ɵeld(0, null, null, 7, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['\n      '])), (_l()(), i0.ɵeld(0, null, null, 4, 'a', [['aria-label',
-                'Previous'], ['href', '#']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['\n        '])), (_l()(), i0.ɵeld(0, null, null, 1, 'span', [['aria-hidden', 'true']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['«'])), (_l()(), i0.ɵted(null, ['\n      '])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 2, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵeld(0, null, null, 1, 'a', [['href', '#']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['1'])), (_l()(),
-            i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 2, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵeld(0, null, null, 1, 'a', [['href',
-                '#']], null, null, null, null, null)),
-        (_l()(), i0.ɵted(null, ['2'])), (_l()(), i0.ɵted(null, ['\n    '])),
-        (_l()(), i0.ɵeld(0, null, null, 2, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵeld(0, null, null, 1, 'a', [['href', '#']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['3'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 2, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵeld(0, null, null, 1, 'a', [['href', '#']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['4'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 2, 'li', [], null, null, null, null, null)),
-        (_l()(), i0.ɵeld(0, null, null, 1, 'a', [['href', '#']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['5'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 7, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['\n      '])),
-        (_l()(), i0.ɵeld(0, null, null, 4, 'a', [['aria-label', 'Next'], ['href',
-                '#']], null, null, null, null, null)),
-        (_l()(), i0.ɵted(null, ['\n        '])), (_l()(), i0.ɵeld(0, null, null, 1, 'span', [['aria-hidden', 'true']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['»'])), (_l()(), i0.ɵted(null, ['\n      '])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵted(null, ['\n  '])), (_l()(), i0.ɵted(null, ['\n'])), (_l()(), i0.ɵted(null, ['\n\n\n\n']))], function (_ck, _v) {
+        (_l()(), i0.ɵeld(0, null, null, 54, 'nav', [['aria-label', 'Page navigation']], null, null, null, null, null)),
+        (_l()(), i0.ɵted(null, ['\n  '])), (_l()(), i0.ɵeld(0, null, null, 51, 'ul', [['class', 'pagination']], null, null, null, null, null)), (_l()(), i0.ɵted(null, ['\n    '])),
+        (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)), (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target', 0], [8, 'href',
+                4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 25).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['1'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 30).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['2'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 35).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['3'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 40).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['4'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 45).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['5'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 50).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['6'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 55).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['7'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 60).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['8'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 65).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['9'])), (_l()(), i0.ɵted(null, ['\n    '])), (_l()(), i0.ɵeld(0, null, null, 3, 'li', [], null, null, null, null, null)),
+        (_l()(), i0.ɵeld(0, null, null, 2, 'a', [], [[1, 'target',
+                0], [8, 'href', 4]], [[null, 'click']], function (_v, en, $event) {
+            var ad = true;
+            if (('click' === en)) {
+                var pd_0 = (i0.ɵnov(_v, 70).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                ad = (pd_0 && ad);
+            }
+            return ad;
+        }, null, null)), i0.ɵdid(671744, null, 0, i1.RouterLinkWithHref, [i1.Router, i1.ActivatedRoute, i2.LocationStrategy], { routerLink: [0, 'routerLink'] }, null), (_l()(), i0.ɵted(null, ['10'])), (_l()(), i0.ɵted(null, ['\n  '])), (_l()(), i0.ɵted(null, ['\n'])), (_l()(), i0.ɵted(null, ['\n\n\n\n']))], function (_ck, _v) {
         var _co = _v.component;
         var currVal_2 = '/category';
         _ck(_v, 4, 0, currVal_2);
         var currVal_4 = _co.foods;
         _ck(_v, 15, 0, currVal_4);
+        var currVal_7 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/1');
+        _ck(_v, 25, 0, currVal_7);
+        var currVal_10 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/2');
+        _ck(_v, 30, 0, currVal_10);
+        var currVal_13 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/3');
+        _ck(_v, 35, 0, currVal_13);
+        var currVal_16 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/4');
+        _ck(_v, 40, 0, currVal_16);
+        var currVal_19 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/5');
+        _ck(_v, 45, 0, currVal_19);
+        var currVal_22 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/6');
+        _ck(_v, 50, 0, currVal_22);
+        var currVal_25 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/7');
+        _ck(_v, 55, 0, currVal_25);
+        var currVal_28 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/8');
+        _ck(_v, 60, 0, currVal_28);
+        var currVal_31 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/9');
+        _ck(_v, 65, 0, currVal_31);
+        var currVal_34 = i0.ɵinlineInterpolate(1, '/category/', _co.current_food_code, '01/10');
+        _ck(_v, 70, 0, currVal_34);
     }, function (_ck, _v) {
         var _co = _v.component;
         var currVal_0 = i0.ɵnov(_v, 4).target;
@@ -89,12 +190,42 @@ export function View_FoodComponent_0(_l) {
         _ck(_v, 3, 0, currVal_0, currVal_1);
         var currVal_3 = _co.getCurrentCategory();
         _ck(_v, 6, 0, currVal_3);
+        var currVal_5 = i0.ɵnov(_v, 25).target;
+        var currVal_6 = i0.ɵnov(_v, 25).href;
+        _ck(_v, 24, 0, currVal_5, currVal_6);
+        var currVal_8 = i0.ɵnov(_v, 30).target;
+        var currVal_9 = i0.ɵnov(_v, 30).href;
+        _ck(_v, 29, 0, currVal_8, currVal_9);
+        var currVal_11 = i0.ɵnov(_v, 35).target;
+        var currVal_12 = i0.ɵnov(_v, 35).href;
+        _ck(_v, 34, 0, currVal_11, currVal_12);
+        var currVal_14 = i0.ɵnov(_v, 40).target;
+        var currVal_15 = i0.ɵnov(_v, 40).href;
+        _ck(_v, 39, 0, currVal_14, currVal_15);
+        var currVal_17 = i0.ɵnov(_v, 45).target;
+        var currVal_18 = i0.ɵnov(_v, 45).href;
+        _ck(_v, 44, 0, currVal_17, currVal_18);
+        var currVal_20 = i0.ɵnov(_v, 50).target;
+        var currVal_21 = i0.ɵnov(_v, 50).href;
+        _ck(_v, 49, 0, currVal_20, currVal_21);
+        var currVal_23 = i0.ɵnov(_v, 55).target;
+        var currVal_24 = i0.ɵnov(_v, 55).href;
+        _ck(_v, 54, 0, currVal_23, currVal_24);
+        var currVal_26 = i0.ɵnov(_v, 60).target;
+        var currVal_27 = i0.ɵnov(_v, 60).href;
+        _ck(_v, 59, 0, currVal_26, currVal_27);
+        var currVal_29 = i0.ɵnov(_v, 65).target;
+        var currVal_30 = i0.ɵnov(_v, 65).href;
+        _ck(_v, 64, 0, currVal_29, currVal_30);
+        var currVal_32 = i0.ɵnov(_v, 70).target;
+        var currVal_33 = i0.ɵnov(_v, 70).href;
+        _ck(_v, 69, 0, currVal_32, currVal_33);
     });
 }
 export function View_FoodComponent_Host_0(_l) {
     return i0.ɵvid(0, [(_l()(), i0.ɵeld(0, null, null, 1, 'app-food', [], null, null, null, View_FoodComponent_0, RenderType_FoodComponent)),
         i0.ɵdid(114688, null, 0, i3.FoodComponent, [i1.ActivatedRoute, i4.FoodService,
-            i5.CategoryService], null, null)], function (_ck, _v) {
+            i5.CategoryService, i6.DOCUMENT], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
     }, null);
 }

@@ -21,8 +21,9 @@ var CategoryComponent = (function () {
             _this.categories = categories.food_list;
         });
     };
-    CategoryComponent.prototype.onCategoryClicked = function (category_name) {
-        this.categoryService.setCurrentCategory(category_name);
+    CategoryComponent.prototype.onCategoryClicked = function (category) {
+        this.categoryService.setCurrentCategory(category.code_name);
+        this.categoryService.setCurrentFoodCode(category.code);
         this.categoryService.setCurrentPage(1);
     };
     CategoryComponent = __decorate([

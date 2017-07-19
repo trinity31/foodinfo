@@ -22,8 +22,9 @@ export class CategoryComponent {
                 );
     }
 
-    onCategoryClicked(category_name: string) {
-        this.categoryService.setCurrentCategory(category_name);
+    onCategoryClicked(category: FoodType) {
+        this.categoryService.setCurrentCategory(category.code_name);
+        this.categoryService.setCurrentFoodCode(category.code);
         this.categoryService.setCurrentPage(1);
     }
 }

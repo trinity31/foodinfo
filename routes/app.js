@@ -34,7 +34,7 @@ router.get('/foodinfo/category/:code/:page', (req, res, next) => {
        },
        qs: {
            uid : 'LS7CVJG3',
-           n : 100,
+           n : 30,
            p: page,
            c: codeParam,
            s: 'food_name',
