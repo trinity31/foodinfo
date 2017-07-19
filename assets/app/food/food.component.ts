@@ -32,7 +32,7 @@ export class FoodComponent {
             )
     }
 
-    getCurrentCategory(name: string) {
+    getCurrentCategory() {
         return this.categoryService.getCurrentCategory();
     }
 
